@@ -45,7 +45,12 @@
             align-items: center;
             margin-right: 1%;
         }
-
+        input[type=text] {
+            width: 33%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
     </style>
 
     <!--Header Content Links-->
@@ -174,10 +179,25 @@
         </div>
     </div>
 
-    <!--Credit-->
+    <!--Contact Us Form-->
     <div class="container">
         <div class="block" style="width: 100%;">
-            <p>Copyright © 2021 Master Chef</p>
+            <form id="form" method="GET" action="display.html">
+                <h3>Contact us:</h3>
+                <input type="text" name="subject" id="subject" placeholder="Subject" required></input><br>
+                <textarea name="notes" id="notes" placeholder="  Notes" rows="5" cols="65" required></textarea><br><br>
+                <input type="button" value="Submit" onclick="submitForm()"><br><br><br>
+                </form>
+                <script>
+                function submitForm(){
+                    if(typeof(localStorage) != "undefined"){
+                        localStorage.subject = document.getElementById("subject").value;
+                        localStorage.notes = document.getElementById("notes").value;
+                    }
+                    document.getElementById("form").submit();
+                }
+                </script>
         </div>
     </div>
+
 </body>

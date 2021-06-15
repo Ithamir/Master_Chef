@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <style>
+            body{background-color:rgb(26, 26, 26);}
+            h1{color:whitesmoke}
+            h2{color:whitesmoke}
+            h3{color:whitesmoke}
+            p{color: whitesmoke}
+            a:link{color:whitesmoke;}
+            a:visited{color: whitesmoke;}
+            img{
+                width: 100%; 
+                height: 250px; 
+                width: 440px; 
+                object-fit:cover;
+            }
+    
+            .header{
+                display:flex; 
+                padding: 10px; 
+                margin-bottom: 5%; 
+                margin-right: 30%;
+            }
+            .link{
+                width: 15%;
+                padding: 10px;
+                background-color: rgb(41,41,41);
+                text-align: center;
+                border-left: 1px solid orangered;
+            }
+            .title{
+                margin-left: 10%;
+                border-left: 4px solid orangered;
+                padding-left: 8px;
+            }
+            .container{
+                display:flex; 
+                margin-right: 10%; 
+                margin-left: 10%; 
+                margin-bottom: 4%;
+            }
+            .block{
+                width: 33%;
+                background-color: transparent;
+                text-align: center;
+                align-items: center;
+                margin-right: 1%;
+            }
+    
+        </style>
+    
+        <!--Header Content Links-->
+        <img src="../images/Main/Masterchef-logo-long.png"; style="padding: 10px; height: 40px; width: 150px; object-fit:contain; float: left; margin-left: 30%; object-fit:cover">
+        <div class="header">
+            <div class="link" style="background-color: orangered;">
+                <a href="../html/Index.html">Main</a>
+            </div>
+            <div class="link">
+                <a href="../html/News.html">News</a>
+            </div>
+            <div class="link">
+                <a href="../html/Videos.html">Videos</a>
+            </div>
+            <div class="link">
+                <a href="../html/Chefs.html">Chefs</a>
+            </div>
+        </div>
+    </head>
+
+    <body onload="setData()">
+        <div class="container">
+            <div class="block" style="width: 100%;">
+                <h1>Subject:</h1>
+                <h2 id="showSubject"><!-- Display the content here --></h2>
+                <br><br>
+                <h1>Notes:</h1>
+                <h2 id="showNotes"><!-- Display the content here --></h2>
+                
+                <script>
+                function setData(){
+                    if(typeof(localStorage) != "undefined"){
+                        document.getElementById("showSubject").innerHTML = localStorage.subject;
+                        document.getElementById("showNotes").innerHTML = localStorage.notes;
+                    }
+                }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
